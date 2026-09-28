@@ -1,0 +1,57 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "IT Task Status API",
+    "description": "Public REST API used to demonstrate REST API integration with Microsoft Copilot Studio.",
+    "version": "1.0.0"
+  },
+  "host": "jsonplaceholder.typicode.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/todos/{id}": {
+      "get": {
+        "summary": "Get task status",
+        "description": "Retrieves a sample task and its completion status.",
+        "operationId": "getTaskStatus",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Task ID.",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "integer"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "completed": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
